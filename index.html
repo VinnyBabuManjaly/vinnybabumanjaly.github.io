@@ -1,0 +1,1171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vinny Babu | AI/ML Engineer</title>
+    <meta name="description" content="Vinny Babu — AI/ML Engineer with 8+ years building production systems. Unsupervised ML, RAG, agentic AI, and full-stack platforms with live demos.">
+
+    <!-- Open Graph (LinkedIn, Facebook, etc.) -->
+    <meta property="og:title" content="Vinny Babu | AI/ML Engineer">
+    <meta property="og:description" content="AI/ML Engineer with 8+ years building production systems — distributed microservices, data pipelines, and applied machine learning. View live project demos.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://vinnybabumanjaly.github.io">
+    <meta property="og:image" content="https://vinnybabumanjaly.github.io/og-card.png">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Vinny Babu | AI/ML Engineer">
+    <meta name="twitter:description" content="AI/ML Engineer with 8+ years building production systems. View live project demos.">
+
+    <!-- Favicon (inline SVG so no extra file needed) -->
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>V</text></svg>">
+
+    <style>
+        :root {
+            --primary: #0f172a;
+            --accent: #2563eb;
+            --accent-light: #3b82f6;
+            --light: #f8fafc;
+            --gray: #64748b;
+            --gray-light: #94a3b8;
+            --border: #e2e8f0;
+            --card-bg: #ffffff;
+            --tag-bg: #eff6ff;
+            --tag-text: #1e40af;
+            --success: #059669;
+            --green-bg: #ecfdf5;
+            --green-text: #065f46;
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+
+        html { scroll-behavior: smooth; }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            background: var(--light);
+            color: var(--primary);
+            line-height: 1.6;
+        }
+
+        a { color: var(--accent); text-decoration: none; }
+        a:hover { text-decoration: underline; }
+
+        /* ── Scroll animations ── */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* ── Navigation ── */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(15, 23, 42, 0.95);
+            backdrop-filter: blur(10px);
+            z-index: 100;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .nav-inner {
+            max-width: 1100px;
+            margin: auto;
+            padding: 16px 24px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .nav-name {
+            color: #fff;
+            font-weight: 700;
+            font-size: 1.1rem;
+            letter-spacing: -0.01em;
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+        }
+
+        .nav-links a {
+            color: #cbd5e1;
+            margin-left: 32px;
+            font-size: 0.9rem;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+
+        .nav-links a:hover {
+            color: #fff;
+            text-decoration: none;
+        }
+
+        /* Mobile menu toggle */
+        .menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 8px;
+        }
+
+        .menu-toggle span {
+            display: block;
+            width: 22px;
+            height: 2px;
+            background: #cbd5e1;
+            margin: 5px 0;
+            transition: 0.3s;
+        }
+
+        /* ── Hero ── */
+        .hero {
+            background: var(--primary);
+            color: #fff;
+            padding: 140px 24px 80px;
+        }
+
+        .hero-inner {
+            max-width: 1100px;
+            margin: auto;
+        }
+
+        .hero-top {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            margin-bottom: 20px;
+        }
+
+        .profile-photo {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid rgba(147, 197, 253, 0.3);
+            flex-shrink: 0;
+        }
+
+        .hero-label {
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: #93c5fd;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            margin-bottom: 16px;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            font-weight: 800;
+            line-height: 1.15;
+            margin-bottom: 0;
+            letter-spacing: -0.02em;
+        }
+
+        .open-to-work {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 0.78rem;
+            font-weight: 600;
+            color: #6ee7b7;
+            background: rgba(16, 185, 129, 0.12);
+            border: 1px solid rgba(16, 185, 129, 0.25);
+            padding: 5px 14px;
+            border-radius: 20px;
+            letter-spacing: 0.03em;
+        }
+
+        .open-to-work .pulse {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: #6ee7b7;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.4; }
+        }
+
+        .hero-summary {
+            font-size: 1.15rem;
+            color: #cbd5e1;
+            max-width: 700px;
+            margin-bottom: 12px;
+            margin-top: 20px;
+            line-height: 1.7;
+        }
+
+        .hero-detail {
+            font-size: 0.95rem;
+            color: #94a3b8;
+            max-width: 660px;
+            margin-bottom: 32px;
+            line-height: 1.7;
+        }
+
+        .hero-links {
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+
+        .hero-links a {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 10px 20px;
+            border-radius: 8px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            transition: all 0.2s;
+        }
+
+        .btn-primary {
+            background: var(--accent);
+            color: #fff;
+        }
+
+        .btn-primary:hover {
+            background: var(--accent-light);
+            text-decoration: none;
+        }
+
+        .btn-outline {
+            border: 1.5px solid #475569;
+            color: #cbd5e1;
+        }
+
+        .btn-outline:hover {
+            border-color: #93c5fd;
+            color: #fff;
+            text-decoration: none;
+        }
+
+        /* ── Sections ── */
+        .section {
+            max-width: 1100px;
+            margin: auto;
+            padding: 80px 24px;
+        }
+
+        .section-label {
+            font-size: 0.75rem;
+            font-weight: 700;
+            color: var(--accent);
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            margin-bottom: 8px;
+        }
+
+        .section h2 {
+            font-size: 2rem;
+            font-weight: 800;
+            margin-bottom: 16px;
+            letter-spacing: -0.01em;
+        }
+
+        .section-intro {
+            font-size: 1.05rem;
+            color: var(--gray);
+            max-width: 660px;
+            margin-bottom: 48px;
+            line-height: 1.7;
+        }
+
+        /* ── About ── */
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 48px;
+            align-items: start;
+        }
+
+        .about-text {
+            font-size: 1.02rem;
+            color: #334155;
+            line-height: 1.8;
+        }
+
+        .about-text p {
+            margin-bottom: 16px;
+        }
+
+        .about-highlights {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+        }
+
+        .highlight-card {
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 24px;
+        }
+
+        .highlight-card .number {
+            font-size: 1.6rem;
+            font-weight: 800;
+            color: var(--accent);
+            line-height: 1;
+        }
+
+        .highlight-card .label {
+            font-size: 0.82rem;
+            color: var(--gray);
+            margin-top: 6px;
+            line-height: 1.4;
+        }
+
+        /* ── Skills ── */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 24px;
+            margin-top: 8px;
+        }
+
+        .skill-group h4 {
+            font-size: 0.8rem;
+            font-weight: 700;
+            color: var(--gray);
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            margin-bottom: 12px;
+        }
+
+        .skill-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .skill-tag {
+            font-size: 0.8rem;
+            font-weight: 500;
+            color: #334155;
+            background: #fff;
+            border: 1px solid var(--border);
+            padding: 5px 12px;
+            border-radius: 6px;
+        }
+
+        /* ── Experience ── */
+        .exp-timeline {
+            display: grid;
+            gap: 0;
+        }
+
+        .exp-item {
+            display: grid;
+            grid-template-columns: 200px 1fr;
+            gap: 32px;
+            padding: 28px 0;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .exp-item:last-child {
+            border-bottom: none;
+        }
+
+        .exp-date {
+            font-size: 0.85rem;
+            color: var(--gray-light);
+            font-weight: 500;
+            padding-top: 2px;
+        }
+
+        .exp-content h3 {
+            font-size: 1.1rem;
+            font-weight: 700;
+            margin-bottom: 2px;
+        }
+
+        .exp-company {
+            font-size: 0.9rem;
+            color: var(--gray);
+            margin-bottom: 10px;
+        }
+
+        .exp-desc {
+            font-size: 0.9rem;
+            color: #475569;
+            line-height: 1.6;
+        }
+
+        /* ── Projects ── */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 24px;
+        }
+
+        .project-card {
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 32px;
+            transition: box-shadow 0.3s, border-color 0.3s, transform 0.3s;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .project-card:hover {
+            box-shadow: 0 8px 30px rgba(0,0,0,0.08);
+            border-color: #cbd5e1;
+            transform: translateY(-2px);
+        }
+
+        .project-card.featured {
+            border-left: 3px solid var(--accent);
+        }
+
+        .project-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 12px;
+            gap: 12px;
+        }
+
+        .project-card h3 {
+            font-size: 1.2rem;
+            font-weight: 700;
+            margin-bottom: 0;
+        }
+
+        .badge {
+            font-size: 0.68rem;
+            font-weight: 700;
+            padding: 3px 10px;
+            border-radius: 20px;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+            white-space: nowrap;
+        }
+
+        .badge-featured {
+            color: var(--accent);
+            background: var(--tag-bg);
+        }
+
+        .badge-live {
+            color: var(--green-text);
+            background: var(--green-bg);
+        }
+
+        .badge-pypi {
+            color: #7c2d12;
+            background: #fff7ed;
+        }
+
+        .project-context {
+            font-size: 0.78rem;
+            color: var(--gray-light);
+            font-weight: 500;
+            margin-bottom: 10px;
+        }
+
+        .project-desc {
+            font-size: 0.93rem;
+            color: var(--gray);
+            line-height: 1.65;
+            margin-bottom: 20px;
+            flex-grow: 1;
+        }
+
+        .project-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-bottom: 20px;
+        }
+
+        .tag {
+            font-size: 0.73rem;
+            font-weight: 600;
+            color: var(--tag-text);
+            background: var(--tag-bg);
+            padding: 4px 10px;
+            border-radius: 6px;
+        }
+
+        .project-links {
+            display: flex;
+            gap: 16px;
+            flex-wrap: wrap;
+            padding-top: 16px;
+            border-top: 1px solid var(--border);
+        }
+
+        .project-links a {
+            font-size: 0.85rem;
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .link-dot {
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            background: var(--success);
+            display: inline-block;
+        }
+
+        /* ── Writing ── */
+        .writing-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 24px;
+        }
+
+        .writing-card {
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 28px;
+            transition: box-shadow 0.2s;
+        }
+
+        .writing-card:hover {
+            box-shadow: 0 4px 24px rgba(0,0,0,0.06);
+        }
+
+        .writing-card .date {
+            font-size: 0.8rem;
+            color: var(--gray-light);
+            font-weight: 500;
+            margin-bottom: 8px;
+        }
+
+        .writing-card h3 {
+            font-size: 1.02rem;
+            font-weight: 700;
+            margin-bottom: 8px;
+            line-height: 1.4;
+        }
+
+        .writing-card p {
+            font-size: 0.88rem;
+            color: var(--gray);
+            line-height: 1.6;
+        }
+
+        /* ── Footer ── */
+        .footer {
+            background: var(--primary);
+            color: #cbd5e1;
+            padding: 60px 24px;
+        }
+
+        .footer-inner {
+            max-width: 1100px;
+            margin: auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .footer-text {
+            font-size: 0.9rem;
+            line-height: 1.5;
+        }
+
+        .footer-links {
+            display: flex;
+            gap: 24px;
+        }
+
+        .footer-links a {
+            color: #94a3b8;
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+
+        .footer-links a:hover {
+            color: #fff;
+        }
+
+        /* ── Responsive ── */
+        @media (max-width: 768px) {
+            .menu-toggle { display: block; }
+
+            .nav-links {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background: rgba(15, 23, 42, 0.98);
+                flex-direction: column;
+                padding: 16px 24px 24px;
+                border-bottom: 1px solid rgba(255,255,255,0.1);
+            }
+
+            .nav-links.open { display: flex; }
+
+            .nav-links a {
+                margin-left: 0;
+                padding: 10px 0;
+                font-size: 1rem;
+            }
+
+            .hero h1 { font-size: 2rem; }
+            .hero { padding: 120px 20px 60px; }
+            .hero-top { flex-wrap: wrap; gap: 16px; }
+            .profile-photo { width: 90px; height: 90px; }
+            .about-content { grid-template-columns: 1fr; gap: 32px; }
+            .about-highlights { grid-template-columns: 1fr 1fr; }
+            .skills-grid { grid-template-columns: 1fr; }
+            .exp-item { grid-template-columns: 1fr; gap: 4px; }
+            .projects-grid { grid-template-columns: 1fr; }
+            .writing-grid { grid-template-columns: 1fr; }
+            .footer-inner { flex-direction: column; gap: 20px; text-align: center; }
+        }
+
+        @media (max-width: 480px) {
+            .hero h1 { font-size: 1.7rem; }
+            .hero-links { flex-direction: column; }
+            .hero-links a { text-align: center; justify-content: center; }
+            .about-highlights { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+<!-- Navigation -->
+<nav>
+    <div class="nav-inner">
+        <span class="nav-name">Vinny Babu</span>
+        <button class="menu-toggle" onclick="document.querySelector('.nav-links').classList.toggle('open')" aria-label="Toggle navigation menu">
+            <span></span><span></span><span></span>
+        </button>
+        <div class="nav-links">
+            <a href="#about">About</a>
+            <a href="#experience">Experience</a>
+            <a href="#projects">Projects</a>
+            <a href="#writing">Writing</a>
+            <a href="https://github.com/VinnyBabuManjaly" target="_blank">GitHub</a>
+            <a href="https://www.linkedin.com/in/vinny-babu-manjaly/" target="_blank">LinkedIn</a>
+        </div>
+    </div>
+</nav>
+
+<!-- Hero -->
+<section class="hero">
+    <div class="hero-inner">
+        <div class="hero-label">AI/ML Engineer &middot; San Francisco Bay Area</div>
+        <div class="hero-top">
+            <img src="profile-photo.jpg" alt="Vinny Babu" class="profile-photo" width="120" height="120">
+            <div>
+                <h1>Vinny Babu</h1>
+                <span class="open-to-work"><span class="pulse"></span> Open to work</span>
+            </div>
+        </div>
+        <p class="hero-summary">
+            AI/ML Engineer with 8+ years building production systems across the full stack &mdash;
+            distributed microservices, data pipelines, and applied machine learning.
+        </p>
+        <p class="hero-detail">
+            I design and ship ETL infrastructure, unsupervised ML pipelines, RAG-based retrieval systems,
+            and agentic AI processing 1M+ daily events. I bring both the engineering rigour to productionise
+            models and the ML depth to build them from scratch.
+        </p>
+        <div class="hero-links">
+            <a href="#projects" class="btn-primary">View Projects</a>
+            <a href="https://github.com/VinnyBabuManjaly" target="_blank" class="btn-outline">GitHub</a>
+            <a href="https://www.linkedin.com/in/vinny-babu-manjaly/" target="_blank" class="btn-outline">LinkedIn</a>
+            <a href="mailto:vinnybabumanjaly@gmail.com" class="btn-outline">Contact</a>
+        </div>
+    </div>
+</section>
+
+<!-- About -->
+<section class="section fade-in" id="about">
+    <div class="section-label">About</div>
+    <h2>Background</h2>
+    <div class="about-content">
+        <div class="about-text">
+            <p>
+                I have spent the past 8+ years building backend systems and data infrastructure at
+                companies like ClearData, U.S. Bank, Zespri International, and Commonwealth Bank &mdash;
+                architecting microservices in Python and Go that process ~1M events per day, designing
+                fault-tolerant serverless pipelines on AWS and GCP, and optimising databases handling
+                30M daily transactions.
+            </p>
+            <p>
+                Over the past year, I have been deepening my ML expertise through the UC Berkeley
+                Executive Education Professional AI/ML Certificate &mdash; building and shipping
+                projects in unsupervised clustering, supervised classification, RAG-based retrieval,
+                agentic AI, and full-stack platforms. Each project below includes source code,
+                documentation, and where possible, a live interactive demo.
+            </p>
+            <p>
+                I follow the CRISP-DM framework for data science work and believe in building baselines
+                before reaching for complex models. I care about engineering quality: tested code,
+                CI/CD pipelines, clean documentation, and systems that run in production, not just
+                in notebooks.
+            </p>
+        </div>
+        <div class="about-highlights">
+            <div class="highlight-card">
+                <div class="number">8+</div>
+                <div class="label">Years building production systems</div>
+            </div>
+            <div class="highlight-card">
+                <div class="number">1M+</div>
+                <div class="label">Events processed per day</div>
+            </div>
+            <div class="highlight-card">
+                <div class="number">30M</div>
+                <div class="label">Daily transactions supported</div>
+            </div>
+            <div class="highlight-card">
+                <div class="number">99.95%</div>
+                <div class="label">Uptime on serverless infra</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Skills -->
+    <div class="skills-grid fade-in" style="margin-top: 48px;">
+        <div class="skill-group">
+            <h4>Languages &amp; Frameworks</h4>
+            <div class="skill-tags">
+                <span class="skill-tag">Python</span>
+                <span class="skill-tag">Go</span>
+                <span class="skill-tag">SQL</span>
+                <span class="skill-tag">TypeScript</span>
+                <span class="skill-tag">Bash</span>
+                <span class="skill-tag">React</span>
+                <span class="skill-tag">Node.js</span>
+                <span class="skill-tag">FastAPI</span>
+                <span class="skill-tag">Flask</span>
+                <span class="skill-tag">Streamlit</span>
+            </div>
+        </div>
+        <div class="skill-group">
+            <h4>Cloud &amp; Infrastructure</h4>
+            <div class="skill-tags">
+                <span class="skill-tag">AWS</span>
+                <span class="skill-tag">GCP</span>
+                <span class="skill-tag">Azure</span>
+                <span class="skill-tag">Docker</span>
+                <span class="skill-tag">Kubernetes</span>
+                <span class="skill-tag">Terraform</span>
+                <span class="skill-tag">CI/CD</span>
+                <span class="skill-tag">Cloud Run</span>
+                <span class="skill-tag">Lambda</span>
+            </div>
+        </div>
+        <div class="skill-group">
+            <h4>AI/ML &amp; Data</h4>
+            <div class="skill-tags">
+                <span class="skill-tag">Scikit-learn</span>
+                <span class="skill-tag">PyTorch</span>
+                <span class="skill-tag">LangChain</span>
+                <span class="skill-tag">RAG</span>
+                <span class="skill-tag">FAISS</span>
+                <span class="skill-tag">HDBSCAN</span>
+                <span class="skill-tag">Pandas</span>
+                <span class="skill-tag">Kafka</span>
+                <span class="skill-tag">Spark</span>
+                <span class="skill-tag">Vector DBs</span>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Experience -->
+<section class="section fade-in" id="experience" style="background: #fff; max-width: none; padding-left: 0; padding-right: 0;">
+    <div style="max-width: 1100px; margin: auto; padding: 0 24px;">
+        <div class="section-label">Experience</div>
+        <h2>Where I have worked</h2>
+        <p class="section-intro">
+            Production systems at scale &mdash; from banking infrastructure to healthcare data platforms.
+        </p>
+        <div class="exp-timeline">
+            <div class="exp-item">
+                <div class="exp-date">Mar 2025 &ndash; Present</div>
+                <div class="exp-content">
+                    <h3>AI/ML &amp; Backend Engineer</h3>
+                    <div class="exp-company">Freelance</div>
+                    <div class="exp-desc">
+                        Building agentic AI systems and full-stack platforms. Published PromptShell to
+                        PyPI &mdash; a multi-provider LLM orchestration tool deployed on GCP Cloud Run.
+                        Developing AI-powered applications with multimodal input (text, voice, image).
+                    </div>
+                </div>
+            </div>
+            <div class="exp-item">
+                <div class="exp-date">Sep 2021 &ndash; Mar 2025</div>
+                <div class="exp-content">
+                    <h3>Software Engineer</h3>
+                    <div class="exp-company">ClearData</div>
+                    <div class="exp-desc">
+                        Architected microservices in Python and Go processing ~1M events/day. Improved API
+                        throughput 30%, cut latency 35%. Owned CI/CD standardisation across teams, reducing
+                        deployment failures 60%. Designed serverless infrastructure on AWS Lambda achieving
+                        99.95% uptime.
+                    </div>
+                </div>
+            </div>
+            <div class="exp-item">
+                <div class="exp-date">Apr 2020 &ndash; Jun 2021</div>
+                <div class="exp-content">
+                    <h3>Software Engineer</h3>
+                    <div class="exp-company">U.S. Bank</div>
+                    <div class="exp-desc">
+                        Built production RESTful APIs on GCP handling millions of daily requests. Led Docker
+                        and Kubernetes containerisation with auto-scaling, achieving 99.9% availability.
+                        Increased test coverage from 45% to 85%.
+                    </div>
+                </div>
+            </div>
+            <div class="exp-item">
+                <div class="exp-date">Nov 2018 &ndash; Dec 2019</div>
+                <div class="exp-content">
+                    <h3>Software Engineer</h3>
+                    <div class="exp-company">Zespri International</div>
+                    <div class="exp-desc">
+                        Built large-scale data pipelines with Apache Beam on GCP Dataflow, cutting
+                        batch processing time 30%. Developed backend APIs serving 50+ downstream
+                        analytics applications.
+                    </div>
+                </div>
+            </div>
+            <div class="exp-item">
+                <div class="exp-date">Mar 2016 &ndash; Nov 2018</div>
+                <div class="exp-content">
+                    <h3>Software Engineer</h3>
+                    <div class="exp-company">Commonwealth Bank</div>
+                    <div class="exp-desc">
+                        Maintained high-availability transaction systems on Azure supporting 30M daily
+                        transactions across 200K+ ATM/POS terminals. Reliability engineering and incident
+                        response for mission-critical banking infrastructure.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Projects -->
+<section class="section fade-in" id="projects">
+    <div class="section-label">Projects</div>
+    <h2>What I have built</h2>
+    <p class="section-intro">
+        Featured projects have live demos, comprehensive documentation, and production-grade code.
+        Each one solves a real problem with real data.
+    </p>
+
+    <div class="projects-grid">
+
+        <!-- WorkloadProfiler -->
+        <div class="project-card featured">
+            <div class="project-header">
+                <h3>Workload Profiler</h3>
+                <div style="display: flex; gap: 6px;">
+                    <span class="badge badge-live">Live App</span>
+                    <span class="badge badge-featured">Featured</span>
+                </div>
+            </div>
+            <div class="project-context">UC Berkeley AI/ML Certificate &middot; 2026</div>
+            <p class="project-desc">
+                Unsupervised ML pipeline applied to 405,894 Google Borg 2019 cluster trace records.
+                Benchmarked 6 models (HDBSCAN, DBSCAN, KMeans, GMM) across four quality metrics with
+                ARI-based stability validation. Achieved Silhouette 0.874 and macro-level ARI of 0.9975.
+                Discovered that CPU carries zero discriminative signal across all workload archetypes &mdash;
+                memory is the primary differentiator. Delivered 4 workload archetypes with scheduling and
+                autoscaling recommendations via an interactive Streamlit application.
+            </p>
+            <div class="project-tags">
+                <span class="tag">HDBSCAN</span>
+                <span class="tag">PCA</span>
+                <span class="tag">Streamlit</span>
+                <span class="tag">Scikit-learn</span>
+                <span class="tag">CRISP-DM</span>
+                <span class="tag">GMM</span>
+            </div>
+            <div class="project-links">
+                <a href="https://workloadprofiler.streamlit.app" target="_blank"><span class="link-dot"></span> Live App</a>
+                <a href="https://vinnybabumanjaly.github.io/WorkloadProfiler/" target="_blank">Report</a>
+                <a href="https://github.com/VinnyBabuManjaly/WorkloadProfiler/blob/master/Workload_Profiler.ipynb" target="_blank">Notebook</a>
+                <a href="https://github.com/VinnyBabuManjaly/WorkloadProfiler" target="_blank">Code</a>
+            </div>
+        </div>
+
+        <!-- PromptShell -->
+        <div class="project-card featured">
+            <div class="project-header">
+                <h3>PromptShell</h3>
+                <div style="display: flex; gap: 6px;">
+                    <span class="badge badge-pypi">PyPI</span>
+                    <span class="badge badge-featured">Featured</span>
+                </div>
+            </div>
+            <div class="project-context">Agentic AI &middot; Published on PyPI &middot; 2026</div>
+            <p class="project-desc">
+                Voice-activated, terminal-aware prompt enhancer for AI coding assistants. Press a hotkey,
+                speak a vague command like &ldquo;fix the error&rdquo; &mdash; PromptShell captures full terminal
+                context (screen buffer, errors across 13 language families, git state) and orchestrates
+                multimodal reasoning through Gemini Vision. Multi-provider LLM orchestration with
+                intelligent failover across Gemini, Ollama, OpenAI, and Anthropic. Deployed as a
+                serverless FastAPI microservice on GCP Cloud Run with GitHub Actions CI/CD.
+            </p>
+            <div class="project-tags">
+                <span class="tag">Agentic AI</span>
+                <span class="tag">Gemini</span>
+                <span class="tag">Cloud Run</span>
+                <span class="tag">FastAPI</span>
+                <span class="tag">CI/CD</span>
+                <span class="tag">Voice</span>
+            </div>
+            <div class="project-links">
+                <a href="https://pypi.org/project/prompt-shell-cli/" target="_blank"><span class="link-dot"></span> PyPI Package</a>
+                <a href="https://github.com/VinnyBabuManjaly/PromptShell" target="_blank">Code</a>
+            </div>
+        </div>
+
+        <!-- MontGoWork -->
+        <div class="project-card featured">
+            <div class="project-header">
+                <h3>MontGoWork</h3>
+                <div style="display: flex; gap: 6px;">
+                    <span class="badge" style="color: #92400e; background: #fef3c7;">2nd Place</span>
+                    <span class="badge badge-featured">Featured</span>
+                </div>
+            </div>
+            <div class="project-context">WorldWideWebs Hackathon &middot; 2nd Place Winner &middot; 2026</div>
+            <p class="project-desc">
+                Full-stack workforce navigation platform for Montgomery, Alabama. Residents complete a
+                barrier assessment (credit, transportation, childcare, housing, health, training,
+                criminal record) and receive personalised re-entry plans with job matches ranked by
+                Practical Value Score, benefits eligibility screening for 7 Alabama programs,
+                expungement guidance, AI-powered chat, and a printable Career Center Ready Package.
+                1,391 backend tests + 417 frontend tests.
+            </p>
+            <div class="project-tags">
+                <span class="tag">Next.js 15</span>
+                <span class="tag">FastAPI</span>
+                <span class="tag">Docker</span>
+                <span class="tag">Full-Stack</span>
+                <span class="tag">1,800+ Tests</span>
+            </div>
+            <div class="project-links">
+                <a href="https://github.com/fivedollarfridays/montgowork" target="_blank">Code</a>
+            </div>
+        </div>
+
+        <!-- ContextFlow -->
+        <div class="project-card featured">
+            <div class="project-header">
+                <h3>ContextFlow</h3>
+                <span class="badge badge-featured">Featured</span>
+            </div>
+            <div class="project-context">RAG System &middot; 2026</div>
+            <p class="project-desc">
+                Full-stack AI assistant powered by Retrieval-Augmented Generation that ingests
+                technical documentation and answers natural-language questions with grounded citations.
+                Uses Redis Stack as a unified backend for vector search, semantic caching, session
+                memory, and long-term personalisation. Cloud Run ready with comprehensive system
+                design documentation.
+            </p>
+            <div class="project-tags">
+                <span class="tag">RAG</span>
+                <span class="tag">Redis Stack</span>
+                <span class="tag">Vector Search</span>
+                <span class="tag">LangChain</span>
+                <span class="tag">Python</span>
+            </div>
+            <div class="project-links">
+                <a href="https://github.com/VinnyBabuManjaly/ContextFlow" target="_blank">Code</a>
+            </div>
+        </div>
+
+        <!-- FinancialCampaignOptimizer -->
+        <div class="project-card">
+            <div class="project-header">
+                <h3>Financial Campaign Optimizer</h3>
+            </div>
+            <div class="project-context">UC Berkeley AI/ML Certificate &middot; 2026</div>
+            <p class="project-desc">
+                Classification pipeline on 41K banking records to predict term deposit conversions.
+                Benchmarked Logistic Regression, KNN, Decision Tree, and SVM with 5-fold cross-validated
+                grid search. Achieved 0.80 ROC-AUC while addressing 9:1 class imbalance. Identified
+                prior campaign success as the strongest predictor (65% conversion vs 11% baseline).
+            </p>
+            <div class="project-tags">
+                <span class="tag">Classification</span>
+                <span class="tag">Scikit-learn</span>
+                <span class="tag">CRISP-DM</span>
+            </div>
+            <div class="project-links">
+                <a href="https://vinnybabumanjaly.github.io/FinancialCampaignOptimizer/" target="_blank">Report</a>
+                <a href="https://github.com/VinnyBabuManjaly/FinancialCampaignOptimizer" target="_blank">Code</a>
+            </div>
+        </div>
+
+        <!-- Car Value Metrics -->
+        <div class="project-card">
+            <div class="project-header">
+                <h3>Car Value Metrics</h3>
+            </div>
+            <div class="project-context">UC Berkeley AI/ML Certificate &middot; 2025</div>
+            <p class="project-desc">
+                Regression analysis of used car pricing using Linear, Ridge, and Lasso models with
+                polynomial features to identify which attributes drive vehicle values. Delivers
+                actionable pricing recommendations for dealerships.
+            </p>
+            <div class="project-tags">
+                <span class="tag">Regression</span>
+                <span class="tag">Feature Engineering</span>
+                <span class="tag">Python</span>
+            </div>
+            <div class="project-links">
+                <a href="https://github.com/VinnyBabuManjaly/car-value-metrics" target="_blank">Code</a>
+            </div>
+        </div>
+
+        <!-- Coupon Acceptance Insights -->
+        <div class="project-card">
+            <div class="project-header">
+                <h3>Coupon Acceptance Insights</h3>
+            </div>
+            <div class="project-context">UC Berkeley AI/ML Certificate &middot; 2024</div>
+            <p class="project-desc">
+                Hypothesis-driven analysis of factors influencing coupon acceptance during travel.
+                Reveals how driver demographics, situational context, and timing impact acceptance
+                rates across different coupon categories, with actionable marketing recommendations.
+            </p>
+            <div class="project-tags">
+                <span class="tag">EDA</span>
+                <span class="tag">Hypothesis Testing</span>
+                <span class="tag">Visualisation</span>
+            </div>
+            <div class="project-links">
+                <a href="https://github.com/VinnyBabuManjaly/coupon-acceptance-insights" target="_blank">Code</a>
+            </div>
+        </div>
+
+        <!-- VisionStream -->
+        <div class="project-card">
+            <div class="project-header">
+                <h3>VisionStream</h3>
+            </div>
+            <div class="project-context">Computer Vision &middot; 2025</div>
+            <p class="project-desc">
+                Real-time video streaming and processing application built with Flask and OpenCV.
+                Captures live video, applies transformations (grayscale, colour channel filtering,
+                resizing), and caches frames for efficient retrieval.
+            </p>
+            <div class="project-tags">
+                <span class="tag">OpenCV</span>
+                <span class="tag">Flask</span>
+                <span class="tag">Real-time</span>
+                <span class="tag">Python</span>
+            </div>
+            <div class="project-links">
+                <a href="https://github.com/VinnyBabuManjaly/VisionStream" target="_blank">Code</a>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<!-- Writing -->
+<section class="section fade-in" id="writing" style="background: #fff; max-width: none; padding-left: 0; padding-right: 0;">
+    <div style="max-width: 1100px; margin: auto; padding: 0 24px;">
+        <div class="section-label">Writing</div>
+        <h2>Latest posts</h2>
+        <p class="section-intro">
+            Technical deep-dives, project walkthroughs, and lessons from building ML systems in production.
+        </p>
+
+        <div class="writing-grid">
+            <div class="writing-card">
+                <div class="date">Coming soon</div>
+                <h3>I Analyzed 400K+ Google Workloads &mdash; Here's What Surprised Me</h3>
+                <p>How memory, not CPU, turned out to be the primary differentiator in cloud workload behavior.</p>
+            </div>
+            <div class="writing-card">
+                <div class="date">Coming soon</div>
+                <h3>DBSCAN vs HDBSCAN: When Fixed Parameters Fail on Real Data</h3>
+                <p>Same algorithm family, same data. One scored -0.046, the other 0.877. Here is why.</p>
+            </div>
+            <div class="writing-card">
+                <div class="date">Coming soon</div>
+                <h3>I Built a Voice-Activated AI Prompt Enhancer</h3>
+                <p>How PromptShell captures terminal context and rewrites vague commands into precise prompts.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Education -->
+<section class="section fade-in">
+    <div class="section-label">Education</div>
+    <h2>Credentials</h2>
+    <div class="exp-timeline" style="margin-top: 24px;">
+        <div class="exp-item">
+            <div class="exp-date">Aug 2025 &ndash; Present</div>
+            <div class="exp-content">
+                <h3>Professional Certificate in AI &amp; Machine Learning</h3>
+                <div class="exp-company">UC Berkeley Executive Education</div>
+            </div>
+        </div>
+        <div class="exp-item">
+            <div class="exp-date">Graduated May 2015</div>
+            <div class="exp-content">
+                <h3>Bachelor of Engineering</h3>
+                <div class="exp-company">University of Calicut &mdash; Electronics and Communication Engineering</div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Footer -->
+<footer class="footer" id="contact">
+    <div class="footer-inner">
+        <div class="footer-text">
+            Vinny Babu &middot; San Francisco Bay Area<br>
+            <span style="font-size: 0.82rem; color: #64748b;">vinnybabumanjaly@gmail.com</span>
+        </div>
+        <div class="footer-links">
+            <a href="https://github.com/VinnyBabuManjaly" target="_blank">GitHub</a>
+            <a href="https://www.linkedin.com/in/vinny-babu-manjaly/" target="_blank">LinkedIn</a>
+            <a href="mailto:vinnybabumanjaly@gmail.com">Email</a>
+        </div>
+    </div>
+</footer>
+
+<!-- Scroll animation observer -->
+<script>
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+            }
+        });
+    }, { threshold: 0.1 });
+
+    document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+</script>
+
+</body>
+</html>
